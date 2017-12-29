@@ -97,5 +97,7 @@ object List { // `List` companion object. Contains functions for creating and wo
   def foldRight2[A,B](as: List[A], z: B)(f: (A, B) => B): B =
     foldLeft(as, identity[B](_))((g, a) => f.curried(a) andThen g) apply z
 
+  def append2[A](a1: List[A], a2: List[A]): List[A] = foldRight2(a1, a2)((a, xs) => Cons(a, xs))
+
   def map[A,B](l: List[A])(f: A => B): List[B] = ???
 }

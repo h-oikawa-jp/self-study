@@ -102,4 +102,5 @@ object List { // `List` companion object. Contains functions for creating and wo
   def flatten[A](l: List[List[A]]): List[A] = foldRight2(l, Nil: List[A])((a,b) => append2(a, b))
 
   def map[A,B](l: List[A])(f: A => B): List[B] = foldRight2(l, Nil: List[B])((a, xs) => Cons(f(a), xs))
+  def flatMap[A,B](as: List[A])(f: A => List[B]): List[B] = foldRight2(as, Nil: List[B])((a, xs) => append2(f(a), xs))
 }

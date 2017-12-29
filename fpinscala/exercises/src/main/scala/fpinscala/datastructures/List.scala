@@ -92,5 +92,7 @@ object List { // `List` companion object. Contains functions for creating and wo
   def product3(ns: List[Double]) = foldLeft(ns, 1.0)((x,y) => x * y)
   def length2[A](l: List[A]): Int = foldLeft(l, 0)((n, a) => n + 1)
 
+  def reverse[A](l: List[A]): List[A] = foldRight(l, Nil: List[A])((a, nl) => Cons(a, nl))
+
   def map[A,B](l: List[A])(f: A => B): List[B] = ???
 }

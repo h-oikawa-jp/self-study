@@ -103,4 +103,9 @@ object List { // `List` companion object. Contains functions for creating and wo
 
   def map[A,B](l: List[A])(f: A => B): List[B] = foldRight2(l, Nil: List[B])((a, xs) => Cons(f(a), xs))
   def flatMap[A,B](as: List[A])(f: A => List[B]): List[B] = foldRight2(as, Nil: List[B])((a, xs) => append2(f(a), xs))
+
+  def filter[A](as: List[A])(f: A => Boolean): List[A] = flatMap(as) {
+    case a if f(a) => List(a)
+    case _ => Nil
+  }
 }

@@ -115,4 +115,9 @@ object List { // `List` companion object. Contains functions for creating and wo
     case (Nil, Cons(b, tb)) => Cons(f(a0, b), zipWith(Nil: List[A], tb)(f)(a0, b0))
     case _ => Nil
   }
+
+  @tailrec
+  def hasSubsequence[A](sup: scala.List[A], sub: scala.List[A]): Boolean = if (sup.isEmpty) false else {
+    sup.startsWith(sub) || hasSubsequence(sup.drop(1), sub)
+  }
 }

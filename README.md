@@ -7,3 +7,7 @@
 
 - コードフォルダ: https://github.com/tf-oikawa/self-study/tree/develop/fpinscala (※[公式project](https://github.com/fpinscala/fpinscala)がベース)
 - 進捗管理用プロジェクト: https://github.com/tf-oikawa/self-study/projects/1
+
+## 過去の読み物
+
+読書メーター: https://bookmeter.com/users/843070
